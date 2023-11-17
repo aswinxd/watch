@@ -72,7 +72,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hey there! This is Aleena - I'm here to help you manage your groups! Hit /help to find out more about how to use me to my full potential.
+Hey there! This is elsandra - I'm here to help you manage your groups! Hit /help to find out more about how to use me to my full potential.
 
 Join my news channel to get information on all the latest updates.
 """
@@ -377,16 +377,16 @@ def Fallen_about_callback(update: Update, context: CallbackContext):
                             text="👥 Support", url=f"https://t.me/{SUPPORT_CHAT}"
                         ),
                         InlineKeyboardButton(
-                            text="📰 Updates", url=f"https://t.me/SU_BOTS_UPDATE"
+                            text="📰 Updates", url=f"https://t.me/{SUPPORT_CHAT}"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            text="📈 Channel", url=f"https://t.me/SU_BOTS_UPDATE"
+                            text="📈 Channel", url=f"https://t.me/{SUPPORT_CHAT}"
                         ),
                         InlineKeyboardButton(
                             text="🛅 Logs",
-                            url="https://t.me/SU_BOTS_UPDATE",
+                            url=f"https://t.me/{SUPPORT_CHAT}",
                         ),
                     ],
                     [
