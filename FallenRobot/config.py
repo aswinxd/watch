@@ -9,7 +9,7 @@ class Config(object):
 
     DATABASE_URL = "postgresql://cloz9otou0057aupa5ylaak3i:rzs8NEdPLs2iFwV4eLbmJUyg@104.251.217.208:9001/cloz9otov0059aupaa9aqhvwt"
 
-    EVENT_LOGS = "-1001696809539"  # Event logs channel to note down important bot level
+    EVENT_LOGS = "-1001535538162"  # Event logs channel to note down important bot level
     MONGO_DB_URI = "mongodb+srv://filetolink:DWPEfBYWs4y1ricL@filetolink.xgmsac5.mongodb.net/?retryWrites=true&w=majority"  # Get ths value from cloud.mong
     # Telegraph link of the image which will be shown at start command.
     START_IMG = "https://te.legra.ph/file/c5fc1c8df4c776e14c061.mp4"
