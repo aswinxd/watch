@@ -81,12 +81,11 @@ __help__ = """
 *Available commands:*
 *Markdown:*
  ❍ /markdownhelp*:* quick summary of how markdown works in telegram - can only be called in private chats
-*React:*
- ❍ /react*:* Reacts with a random reaction 
-*Urban Dictonary:*
- ❍ /ud <word>*:* Type the word or expression you want to search use
-*Wikipedia:*
- ❍ /wiki <query>*:* wikipedia your query
+ 
+*Other commands on misc will be relesed on our next update*
+> checkout @AmiciaRobot for your group voice chat
+
+
 """
 
 ECHO_HANDLER = DisableAbleCommandHandler(
