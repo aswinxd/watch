@@ -170,7 +170,7 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="◁", callback_data="help_back")]]
+                        [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
                     ),
                 )
 
@@ -191,7 +191,7 @@ def start(update: Update, context: CallbackContext):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_sticker(
-                "CAACAgIAAxkBAAPmZVckQte8GObMDCtV4UMWeDEQLq4AAgEBAAJWnb0KIr6fDrjC5jQzBA"
+                "CAACAgIAAxkBAAItNGVXQ9qNsOS2aL42hm0hIibsQqrXAAJeGAACiA4oSFQY0q5D0ZQQMwQ"
             )
             update.effective_message.reply_text(
                 PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME),
