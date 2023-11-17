@@ -85,7 +85,7 @@ buttons = [
         ),   
     ],
     [
-        InlineKeyboardButton(text="❗Premium Help", callback_data="fallen_"),
+        InlineKeyboardButton(text="❗Support", callback_data="fallen_"),
         InlineKeyboardButton(text="❓Commands Help", callback_data="help_back"),
     ],
 ]
@@ -344,7 +344,7 @@ def Fallen_about_callback(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            text="❓VoiceChat Help", callback_data="settings_back_helper"
+                            text="❓Updates", callback_data=""
                         ),
                         InlineKeyboardButton(
                             text="❓Premium features", callback_data="bothelp"
