@@ -10,13 +10,13 @@ class Config(object):
     DATABASE_URL = "postgresql://cloz9otou0057aupa5ylaak3i:rzs8NEdPLs2iFwV4eLbmJUyg@104.251.217.208:9001/cloz9otov0059aupaa9aqhvwt"
 
     EVENT_LOGS = "-1001696809539"  # Event logs channel to note down important bot level
-    MONGO_DB_URI = "mongodb+srv://bot:bot@cluster0.8vepzds.mongodb.net/?retryWrites=true&w=majority"  # Get ths value from cloud.mong
+    MONGO_DB_URI = "mongodb+srv://filetolink:DWPEfBYWs4y1ricL@filetolink.xgmsac5.mongodb.net/?retryWrites=true&w=majority"  # Get ths value from cloud.mong
     # Telegraph link of the image which will be shown at start command.
     START_IMG = "https://te.legra.ph/file/c5fc1c8df4c776e14c061.mp4"
 
     SUPPORT_CHAT = "X1botchat"  # Your Telegram support group chat username where your users will go and bother you
 
-    TOKEN = "1710500911:AAGA-2NBsJyeNRJUEZlMsjjsSg_cvxLie7o"  # Get bot token from @BotFather on Telegram
+    TOKEN = "1821123783:AAEr7oPnINXxxDKSqu93rH_2iKea0bl6l8c"  # Get bot token from @BotFather on Telegram
 
     TIME_API_KEY = "YDNAVZ2G1KUL"  # Get this value from https://timezonedb.com/api
 
