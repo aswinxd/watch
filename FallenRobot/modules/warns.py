@@ -123,7 +123,7 @@ def warn(
             [
                 [
                     InlineKeyboardButton(
-                        "✨ ʀᴇᴍᴏᴠᴇ ✨",
+                        "❕Remove warn",
                         callback_data="rm_warn({})".format(user.id),
                     ),
                 ],
