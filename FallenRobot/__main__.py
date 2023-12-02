@@ -486,7 +486,7 @@ def get_help(update: Update, context: CallbackContext):
                         InlineKeyboardButton(
                             text="❔How to use / Commands help",
                             url="https://t.me/{}?start=help".format(
-                                context.bot.username, module
+                                context.bot.username
                             ),
                         )
                     ]
@@ -696,9 +696,8 @@ def main():
                 chat_id=f"@{SUPPORT_CHAT}",
                 photo=START_IMG,
                 caption=f"""
-ㅤ {BOT_NAME} Restarted
+📢Bot Restarted!
        
-
     """,
                 parse_mode=ParseMode.MARKDOWN,
             )
