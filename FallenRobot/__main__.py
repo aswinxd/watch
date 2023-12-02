@@ -84,7 +84,7 @@ buttons = [
         ),
     ],
     [
-        InlineKeyboardButton(text="❓Help Commands", callback_data="help_back"),
+        InlineKeyboardButton(text="❓How to use / Commands Help", callback_data="help_back"),
     ],
     [
         InlineKeyboardButton(text="❔X1 News", url=f"https://t.me/Xmusicbots"),
@@ -93,7 +93,7 @@ buttons = [
 ]
 
 HELP_STRINGS = f"""
-This is elsandra help click the buttons to see the help
+This is elsandra help Module click the buttons to see the help
 If you have any doubts head to support chat"""
 
 IMPORTED = {}
@@ -468,7 +468,7 @@ def get_help(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Help",
+                                text="❔How to use / Commands help",
                                 url="https://t.me/{}?start=ghelp_{}".format(
                                     context.bot.username, module
                                 ),
@@ -479,21 +479,14 @@ def get_help(update: Update, context: CallbackContext):
             )
             return
         update.effective_message.reply_text(
-            "Choose an option.",
+            "Click The Button to open help module",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="Open in private",
+                            text="❔How to use / Commands help",
                             url="https://t.me/{}?start=help".format(
                                 context.bot.username
-                            ),
-                        )
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            text="Open Here",
-                            callback_data="help_back",
                         )
                     ],
                 ]
@@ -660,7 +653,7 @@ def get_settings(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Settings",
+                                text="⚙️Settings",
                                 url="t.me/{}?start=stngs_{}".format(
                                     context.bot.username, chat.id
                                 ),
@@ -702,14 +695,10 @@ def main():
                 chat_id=f"@{SUPPORT_CHAT}",
                 photo=START_IMG,
                 caption=f"""
-ㅤ🥀 {BOT_NAME} Is alive...
+ㅤ {BOT_NAME} Restarted
+       
 
-┏•❅────✧❅✦❅✧────❅•┓
-ㅤ★ **ᴘʏᴛʜᴏɴ :** `{y()}`
-ㅤ★ **ʟɪʙʀᴀʀʏ :** `{telever}`
-ㅤ★ **ᴛᴇʟᴇᴛʜᴏɴ :** `{tlhver}`
-ㅤ★ **ᴩʏʀᴏɢʀᴀᴍ :** `{pyrover}`
-┗•❅────✧❅✦❅✧────❅•┛""",
+    """,
                 parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:
