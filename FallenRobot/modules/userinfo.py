@@ -122,7 +122,7 @@ def get_id(update: Update, context: CallbackContext):
             user2 = message.reply_to_message.forward_from
 
             msg.reply_text(
-                f"<b>ᴛᴇʟᴇɢʀᴀᴍ ɪᴅ:</b>,"
+                f"<b>Telegram id:</b>,"
                 f"• {html.escape(user2.first_name)} - <code>{user2.id}</code>.\n"
                 f"• {html.escape(user1.first_name)} - <code>{user1.id}</code>.",
                 parse_mode=ParseMode.HTML,
@@ -226,7 +226,6 @@ def info(update: Update, context: CallbackContext):
     rep = message.reply_text("<code>Processing...</code>", parse_mode=ParseMode.HTML)
 
     text = (
-        f"ㅤ ㅤㅤ      USER INFO           "
         f"<b>User id:</b> <code>{user.id}</code>\n"
         f"<b>Name:</b> {html.escape(user.first_name)}"
     )
@@ -276,7 +275,7 @@ def info(update: Update, context: CallbackContext):
             result = result.json()["result"]
             if "custom_title" in result.keys():
                 custom_title = result["custom_title"]
-                text += f"\n\nᴛɪᴛʟᴇ:\n<b>{custom_title}</b>"
+                text += f"\n\nTitle:\n<b>{custom_title}</b>"
     except BadRequest:
         pass
 
@@ -287,45 +286,6 @@ def info(update: Update, context: CallbackContext):
             mod_info = mod.__user_info__(user.id, chat.id).strip()
         if mod_info:
             text += "\n\n" + mod_info
-
-    if INFOPIC:
-        try:
-            profile = context.bot.get_user_profile_photos(user.id).photos[0][-1]
-            _file = bot.get_file(profile["file_id"])
-            _file.download(f"{user.id}.png")
-
-            message.reply_photo(
-                photo=open(f"{user.id}.png", "rb"),
-                caption=(text),
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(
-                                "Health", url="https://t.me/SaitamaRobot"
-                            ),
-                            InlineKeyboardButton(
-                                "Channel", url="https://t.me/Xmusicbots"
-                            ),
-                        ],
-                    ]
-                ),
-                parse_mode=ParseMode.HTML,
-            )
-
-            os.remove(f"{user.id}.png")
-        # Incase user don't have profile pic, send normal text
-        except IndexError:
-            message.reply_text(
-                text, parse_mode=ParseMode.HTML, disable_web_page_preview=True
-            )
-
-    else:
-        message.reply_text(
-            text, parse_mode=ParseMode.HTML, disable_web_page_preview=True
-        )
-
-    rep.delete()
-
 
 def about_me(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
