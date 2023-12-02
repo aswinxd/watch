@@ -198,6 +198,8 @@ async def scam(results, lim):
 __mod_name__ = "ChatGPT"
 
 __help__ = """
+  **Currently disabled on Bot Ask at Support Group for More info**
+   
   /chatgpt <text>*:* Perform a google search
   /image <text>*:* Search Google for images and returns them\nFor greater no. of results specify lim, For eg: `/img hello lim=10`
 """
