@@ -91,12 +91,12 @@ def ban(update: Update, context: CallbackContext) -> str:
         silent = False
     log = (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        f"#{'S' if silent else ''}ʙᴀɴɴᴇᴅ\n"
-        f"<b>ʙᴀɴɴᴇᴅ ʙʏ:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
-        f"<b>ᴜsᴇʀ:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
+        f"#{'S' if silent else ''}Banned\n"
+        f"<b>Banned by:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+        f"<b>User:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
     )
     if reason:
-        log += "\n<b>ʀᴇᴀsᴏɴ:</b> {}".format(reason)
+        log += "\n<b>Reason:</b> {}".format(reason)
 
     try:
         chat.ban_member(user_id)
@@ -109,12 +109,12 @@ def ban(update: Update, context: CallbackContext) -> str:
 
         # bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
         reply = (
-            f"<code>❕</code><b>ʙᴀɴ ᴇᴠᴇɴᴛ</b>\n"
-            f"<code> </code><b>•  ʙᴀɴɴᴇᴅ ʙʏ:</b> {mention_html(user.id, user.first_name)}\n"
-            f"<code> </code><b>•  ᴜsᴇʀ:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
+            f"<code>❕</code><b>#BANEVENT</b>\n"
+            f"<code> </code><b>Banned By:</b> {mention_html(user.id, user.first_name)}\n"
+            f"<code> </code><b>User:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
         )
         if reason:
-            reply += f"\n<code> </code><b>•  ʀᴇᴀsᴏɴ:</b> \n{html.escape(reason)}"
+            reply += f"\n<code> </code><b>Reason:</b> \n{html.escape(reason)}"
         bot.sendMessage(chat.id, reply, parse_mode=ParseMode.HTML)
         return log
 
@@ -123,7 +123,7 @@ def ban(update: Update, context: CallbackContext) -> str:
             # Do not reply
             if silent:
                 return log
-            message.reply_text("ʙᴀɴɴᴇᴅ !", quote=False)
+            message.reply_text("Banned!", quote=False)
             return log
         else:
             LOGGER.warning(update)
@@ -187,10 +187,10 @@ def temp_ban(update: Update, context: CallbackContext) -> str:
 
     log = (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        "ᴛᴇᴍᴩ ʙᴀɴ\n"
-        f"<b>ʙᴀɴɴᴇᴅ ʙʏ:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
-        f"<b>ᴜsᴇʀ:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}\n"
-        f"<b>ᴛɪᴍᴇ:</b> {time_val}"
+        "Temp ban\n"
+        f"<b>Banned By:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+        f"<b>User:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}\n"
+        f"<b>Time:</b> {time_val}"
     )
     if reason:
         log += "\n<b>ʀᴇᴀsᴏɴ:</b> {}".format(reason)
@@ -339,12 +339,12 @@ def unban(update: Update, context: CallbackContext) -> str:
 
     log = (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        f"ᴜɴʙᴀɴɴᴇᴅ\n"
-        f"<b>ᴜɴʙᴀɴɴᴇᴅ ʙʏ:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
-        f"<b>ᴜsᴇʀ:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
+        f"Unbanned\n"
+        f"<b>Unbanned By:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+        f"<b>User:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
     )
     if reason:
-        log += f"\n<b>ʀᴇᴀsᴏɴ:</b> {reason}"
+        log += f"\n<b>Reason:</b> {reason}"
 
     return log
 
@@ -386,23 +386,23 @@ def selfunban(context: CallbackContext, update: Update) -> str:
 
     log = (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        f"ᴜɴʙᴀɴɴᴇᴅ\n"
-        f"<b>ᴜɴʙᴀɴɴᴇᴅ ʙʏ:</b> {mention_html(user.id, user.first_name)}\n"
-        f"<b>ᴜsᴇʀ:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
+        f"Unbanned\n"
+        f"<b>Unbanned By:</b> {mention_html(user.id, user.first_name)}\n"
+        f"<b>User:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
     )
 
     return log
 
 
 __help__ = """
- ❍ /kickme*:* kicks the user who issued the command
+  /kickme*:* kicks the user who issued the command
 
 *Admins only:*
- ❍ /ban <userhandle>*:* bans a user. (via handle, or reply)
- ❍ /sban <userhandle>*:* Silently ban a user. Deletes command, Replied message and doesn't reply. (via handle, or reply)
- ❍ /tban <userhandle> x(m/h/d)*:* bans a user for `x` time. (via handle, or reply). `m` = `minutes`, `h` = `hours`, `d` = `days`.
- ❍ /unban <userhandle>*:* unbans a user. (via handle, or reply)
- ❍ /kick <userhandle>*:* kicks a user out of the group, (via handle, or reply)
+  /ban <userhandle>*:* bans a user. (via handle, or reply)
+  /sban <userhandle>*:* Silently ban a user. Deletes command, Replied message and doesn't reply. (via handle, or reply)
+  /tban <userhandle> x(m/h/d)*:* bans a user for `x` time. (via handle, or reply). `m` = `minutes`, `h` = `hours`, `d` = `days`.
+  /unban <userhandle>*:* unbans a user. (via handle, or reply)
+  /kick <userhandle>*:* kicks a user out of the group, (via handle, or reply)
 """
 
 BAN_HANDLER = CommandHandler(["ban", "sban"], ban, run_async=True)
