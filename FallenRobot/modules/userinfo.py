@@ -263,14 +263,14 @@ def info(update: Update, context: CallbackContext):
             status = status = bot.get_chat_member(chat.id, user.id).status
             if status:
                 if status in {"left", "kicked"}:
-                    text += _stext.format("ɴᴏᴛ ʜᴇʀᴇ")
+                    text += _stext.format("Not Here")
                 elif status == "member":
-                    text += _stext.format("ᴅᴇᴛᴇᴄᴛᴇᴅ")
+                    text += _stext.format("Detected")
                 elif status in {"administrator", "creator"}:
-                    text += _stext.format("ᴀᴅᴍɪɴ")
+                    text += _stext.format("Admin")
     if user_id not in [bot.id, 777000, 1087968824]:
         userhp = hpmanager(user)
-        text += f"\n\n<b>ʜᴇᴀʟᴛʜ:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
+        text += f"\n\n<b>User Health:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
 
     if user.id == OWNER_ID:
         text += "\n\nᴛʜᴇ ᴅɪsᴀsᴛᴇʀ ʟᴇᴠᴇʟ ᴏғ ᴛʜɪs ᴜsᴇʀ ɪs <b>ɢᴏᴅ</b>.\n"
@@ -294,7 +294,7 @@ def info(update: Update, context: CallbackContext):
             result = result.json()["result"]
             if "custom_title" in result.keys():
                 custom_title = result["custom_title"]
-                text += f"\n\nᴛɪᴛʟᴇ:\n<b>{custom_title}</b>"
+                text += f"\n\nAdmin Title:\n<b>{custom_title}</b>"
     except BadRequest:
         pass
 
@@ -495,9 +495,9 @@ def __user_info__(user_id):
     me = html.escape(sql.get_user_me_info(user_id) or "")
     result = ""
     if me:
-        result += f"<b>ᴀʙᴏᴜᴛ ᴜsᴇʀ:</b>\n{me}\n"
+        result += f"<b>About user:</b>\n{me}\n"
     if bio:
-        result += f"<b>ᴏᴛʜᴇʀs sᴀʏ ᴛʜᴀᴛ:</b>\n{bio}\n"
+        result += f"<b>Others say That:</b>\n{bio}\n"
     result = result.strip("\n")
     return result
 
