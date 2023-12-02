@@ -486,9 +486,10 @@ def get_help(update: Update, context: CallbackContext):
                         InlineKeyboardButton(
                             text="❔How to use / Commands help",
                             url="https://t.me/{}?start=help".format(
-                                context.bot.username
+                                context.bot.username, module
+                            ),
                         )
-                    ],
+                    ]
                 ]
             ),
         )
