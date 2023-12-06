@@ -133,7 +133,7 @@ async def job_open():
         try:
             await tbot.send_message(
                 int(warner.chat_id),
-                f"**Night Mode Ended**\n\n`Group is opening again now everyone can send messages in this chat.`\n Powered By @ElsaRobot",
+                f"**Night Mode Ended**\n\n`Group is opening again now everyone can send messages in this chat.`\n\n Powered By @ElsaRobot",
             )
             await tbot(
                 functions.messages.EditChatDefaultBannedRightsRequest(
@@ -152,8 +152,8 @@ scheduler.start()
 __help__ = """
 *Admins Only*
 
-❍ /nightmode*:* Adds Group to NightMode Chats
- ❍ /rmnight*:* Removes Group From NightMode Chats
+ /nightmode*:* Adds Group to NightMode Chats
+ /rmnight*:* Removes Group From NightMode Chats
 
 *Note:* Night Mode chats get Automatically closed at 12 am(IST) and Automatically openned at 6 am(IST) to Prevent Night Spams.
 """
