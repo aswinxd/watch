@@ -33,7 +33,7 @@ class Config(object):
     ALLOW_CHATS = True
     ALLOW_EXCL = True
     DEL_CMDS = True
-    INFOPIC = True
+    INFOPIC = False
     LOAD = []
     NO_LOAD = []
     STRICT_GBAN = True
