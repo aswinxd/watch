@@ -89,8 +89,7 @@ def paginate_modules(page_n: int, module_dict: Dict, prefix, chat=None) -> List:
             (
                 EqInlineKeyboardButton(
                     "🔙", callback_data="fallen_back"),
-                ),
-            )
+            ),
         ]
 
     else:
