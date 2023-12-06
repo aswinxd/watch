@@ -526,19 +526,6 @@ def devlist(update: Update, context: CallbackContext):
     m.edit_text(reply, parse_mode=ParseMode.HTML)
 
 
-__help__ = f"""
-*⚠️ Notice:*
-
-*Remote commands:*
- ❍ /rban*:* user group*:* Remote ban
- ❍ /runban*:* user group*:* Remote un-ban
- ❍ /rpunch*:* user group*:* Remote punch
- ❍ /rmute*:* user group*:* Remote mute
- ❍ /runmute*:* user group*:* Remote un-mute
-
-`⚠️ Read from top`
-Visit @{SUPPORT_CHAT} for more information.
-"""
 
 SUDO_HANDLER = CommandHandler("addsudo", addsudo, run_async=True)
 SUPPORT_HANDLER = CommandHandler(("addsupport", "adddemon"), addsupport, run_async=True)
@@ -576,7 +563,6 @@ dispatcher.add_handler(SUPPORTLIST_HANDLER)
 dispatcher.add_handler(SUDOLIST_HANDLER)
 dispatcher.add_handler(DEVLIST_HANDLER)
 
-__mod_name__ = "Support"
 __handlers__ = [
     SUDO_HANDLER,
     SUPPORT_HANDLER,
