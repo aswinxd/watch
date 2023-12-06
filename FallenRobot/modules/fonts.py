@@ -196,7 +196,3 @@ async def style(c, m):
         pass
 
 
-__help__ = """
- /font <text> *:* Converts simple font to different type of fonts"""
-
-__mod_name__ = "Font Editor"
