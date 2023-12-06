@@ -319,10 +319,10 @@ async def lego(event):
             os.remove(fname)
 
 
-__mod_name__ = "Logo"
+__mod_name__ = "Logo & Font"
 
 __help__ = """
-I can create some beautiful and attractive logo for your profile pics.
-
-❍ /logo <text>*:* Create a logo of your given text with random view.
+I can create some beautiful and attractive logo for your profile pics and fonts.
+/font <text> *:* Converts simple font to different type of fonts
+/logo <text>*:* Create a logo of your given text with random view.
 """
