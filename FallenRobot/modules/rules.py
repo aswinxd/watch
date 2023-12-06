@@ -57,12 +57,12 @@ def send_rules(update, chat_id, from_pm=False, dest_chat=None):
         )
     elif rules and reply_msg:
         reply_msg.reply_text(
-            "ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ʀᴜʟᴇs.",
+            "Click on the button to read rules",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="• ʀᴜʟᴇs •",
+                            text="❔Read Rules",
                             url=f"t.me/{bot.username}?start={chat_id}",
                         ),
                     ],
@@ -71,12 +71,12 @@ def send_rules(update, chat_id, from_pm=False, dest_chat=None):
         )
     elif rules:
         update.effective_message.reply_text(
-            "ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ʀᴜʟᴇs.",
+            "Click on the button to read rules",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="• ʀᴜʟᴇs •",
+                            text="❔Read Rules",
                             url=f"t.me/{bot.username}?start={chat_id}",
                         ),
                     ],
