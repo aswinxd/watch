@@ -66,7 +66,7 @@ def markdown_help(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            "Markdown help",
+                            "❔Markdown help",
                             url=f"t.me/{context.bot.username}?start=markdownhelp",
                         )
                     ]
@@ -88,10 +88,10 @@ __help__ = """
   /delgpic: Same as above but to remove group profile pic.
   /setsticker: As a reply to some sticker to set it as group sticker set!
   /setdescription <description>: Sets new chat description in group.
+
+  
 *Other commands on misc will be relesed on our next update*
 > checkout @AmiciaRobot for your group voice chat
-
-
 """
 
 ECHO_HANDLER = DisableAbleCommandHandler(
