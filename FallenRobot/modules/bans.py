@@ -271,12 +271,12 @@ def kick(update: Update, context: CallbackContext) -> str:
         )
         log = (
             f"<b>{html.escape(chat.title)}:</b>\n"
-            f"ᴋɪᴄᴋᴇᴅ\n"
-            f"<b>ᴋɪᴄᴋᴇᴅ ʙʏ:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
-            f"<b>ᴜsᴇʀ:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
+            f"#KICKED\n"
+            f"<b>Kicked By:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+            f"<b>User:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
         )
         if reason:
-            log += f"\n<b>ʀᴇᴀsᴏɴ:</b> {reason}"
+            log += f"\n<b>Reason:</b> {reason}"
 
         return log
 
