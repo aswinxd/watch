@@ -248,7 +248,7 @@ def join_fed(update: Update, context: CallbackContext):
     administrators = chat.get_administrators()
     fed_id = sql.get_fed_id(chat.id)
 
-    if user.id in SUDO_USERS:
+    if user.id in DRAGONS:
         pass
     else:
         for admin in administrators:
