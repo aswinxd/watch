@@ -16,6 +16,8 @@ from sqlalchemy import (
 
 class Users(BASE):
     __tablename__ = "users"
+    __table_args__ = {'extend_existing': True}
+    
     user_id = Column(BigInteger, primary_key=True)
     username = Column(UnicodeText)
 
@@ -25,7 +27,6 @@ class Users(BASE):
 
     def __repr__(self):
         return "<User {} ({})>".format(self.username, self.user_id)
-
 
 class Chats(BASE):
     __tablename__ = "chats"
