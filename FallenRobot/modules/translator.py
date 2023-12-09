@@ -38,7 +38,7 @@ def totranslate(update: Update, context: CallbackContext) -> None:
         dest = "en"
     translation = trans(to_translate, sourcelang=source, targetlang=dest)
     reply = (
-        f"<b>ᴛʀᴀɴsʟᴀᴛᴇᴅ ғʀᴏᴍ {source} ᴛᴏ {dest}</b> :\n"
+        f"<b>Translated {source} ᴛᴏ {dest}</b> :\n"
         f"<code>{translation.text}</code>"
     )
 
@@ -46,12 +46,13 @@ def totranslate(update: Update, context: CallbackContext) -> None:
 
 
 __help__ = """
- ❍ /tr or /tl (language code) as reply to a long message
+/tr or /tl (language code) as reply to a long message
 *Example:* 
- ❍ /tr en*:* translates something to english
- ❍ /tr hi-en*:* translates hindi to english
+/tr en*:* translates something to english
+/tr hi-en*:* translates hindi to english
 
-[ʟᴀɴɢᴜᴀɢᴇ ᴄᴏᴅᴇs](https://te.legra.ph/LANGUAGE-CODES-05-23-2)
+language Code: @X1botchat
+
 """
 __mod_name__ = "Translation"
 
