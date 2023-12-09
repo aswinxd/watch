@@ -268,7 +268,7 @@ def info(update: Update, context: CallbackContext):
                     text += _stext.format("Admin")
     if user_id not in [bot.id, 777000, 1087968824]:
         userhp = hpmanager(user)
-        text += f"\n\n<b>Health:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
+        text += f"\n\n<b>Health:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%"
 
     if user.id == OWNER_ID:
         text += "."
@@ -292,7 +292,7 @@ def info(update: Update, context: CallbackContext):
             result = result.json()["result"]
             if "custom_title" in result.keys():
                 custom_title = result["custom_title"]
-                text += f"\n\nAdmin Title:\n<b>{custom_title}</b>"
+                text += f"\n\nTitle:\n<b>{custom_title}</b>"
     except BadRequest:
         pass
 
