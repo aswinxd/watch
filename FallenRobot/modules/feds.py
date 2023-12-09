@@ -34,6 +34,7 @@ from telegram import (
     Chat, InlineKeyboardButton,
     InlineKeyboardMarkup,
     MessageEntity,
+    ParseMode,
     Update,
 )
 from telegram.error import BadRequest, TelegramError, Unauthorized
@@ -881,7 +882,7 @@ def fed_ban(update: Update, context: CallbackContext):
                 pass
         return
 
-    fed_name = info["fname"]
+    fednam = info["fname"]
 
     # starting = "Starting a federation ban for {} in the Federation <b>{}</b>.".format(
     #    user_target, fed_name)
