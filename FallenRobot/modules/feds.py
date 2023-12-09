@@ -14,7 +14,7 @@ from FallenRobot import (
     SUPPORT_CHAT,
     OWNER_ID,
     DRAGONS,
-    WHITELIST_USERS,
+    WOLVES,
     dispatcher,
 )
 from FallenRobot.modules.disable import DisableAbleCommandHandler
