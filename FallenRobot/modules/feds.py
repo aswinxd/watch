@@ -882,7 +882,7 @@ def fed_ban(update: Update, context: CallbackContext):
                 pass
         return
 
-    fednam = info["fname"]
+    fed_name = info["fname"]
 
     # starting = "Starting a federation ban for {} in the Federation <b>{}</b>.".format(
     #    user_target, fed_name)
