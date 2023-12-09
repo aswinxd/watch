@@ -623,11 +623,11 @@ def fed_ban(update: Update, context: CallbackContext):
         message.reply_text("God cannot be fed banned!")
         return
 
-    if int(user_id) in SUDO_USERS:
+    if int(user_id) in DRAGONS:
         message.reply_text("Sudo users cannot be fed banned!")
         return
 
-    if int(user_id) in WHITELIST_USERS:
+    if int(user_id) in WOLVES:
         message.reply_text("Whitelist users cannot be fed banned!")
         return
 
