@@ -47,7 +47,6 @@ wikipedia==1.4.0
 gtts
 datetime
 future
-emoji==1.7.0
 lxml
 beautifulsoup4
 requests
