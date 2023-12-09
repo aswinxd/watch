@@ -50,7 +50,6 @@ future
 lxml
 beautifulsoup4
 requests
-python-telegram-bot==13.14
 psycopg2-binary
 feedparser
 pynewtonmath
