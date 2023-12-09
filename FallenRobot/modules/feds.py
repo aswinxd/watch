@@ -13,7 +13,7 @@ from FallenRobot import (
     LOGGER,
     SUPPORT_CHAT,
     OWNER_ID,
-    SUDO_USERS,
+    DRAGONS,
     WHITELIST_USERS,
     dispatcher,
 )
