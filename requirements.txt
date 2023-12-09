@@ -44,3 +44,4 @@ telethon==1.32.0
 tgcrypto==1.2.5
 wikipedia==1.4.0
 gtts
+datetime
