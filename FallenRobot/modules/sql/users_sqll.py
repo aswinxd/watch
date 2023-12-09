@@ -30,6 +30,8 @@ class Users(BASE):
 
 class Chats(BASE):
     __tablename__ = "chats"
+    __table_args__ = {'extend_existing': True}
+    
     chat_id = Column(String(14), primary_key=True)
     chat_name = Column(UnicodeText, nullable=False)
 
@@ -39,7 +41,6 @@ class Chats(BASE):
 
     def __repr__(self):
         return "<Chat {} ({})>".format(self.chat_name, self.chat_id)
-
 
 class ChatMembers(BASE):
     __tablename__ = "chat_members"
