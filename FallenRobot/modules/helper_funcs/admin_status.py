@@ -5,7 +5,7 @@ from cachetools import TTLCache
 from telegram import Chat, ChatMember, TelegramError, Update
 from telegram.ext import CallbackContext, ChatMemberHandler
 
-from FallenRobot import SUDO_USERS, dispatcher
+from FallenRobot import DRAGONS, dispatcher
 
 BOT_ADMIN_CACHE = TTLCache(maxsize = 512, ttl = 60 * 30)
 USER_ADMIN_CACHE = TTLCache(maxsize = 512, ttl = 60 * 30)
