@@ -241,12 +241,10 @@ def info(update: Update, context: CallbackContext):
 
     text = (
         f"\n<b>USER INFO</b>"
-        f"\n<b>user id:</b> <code>{user.id}</code>\n"
-        f"<b>First name:</b> {html.escape(user.first_name)}"
+        
+        f"\n<b>ID:</b> <code>{user.id}</code>\n"
+        f"\n<b>Name:</b> {html.escape(user.first_name)}"
     )
-
-    if user.last_name:
-        text += f"\n<b>Last name:</b> {html.escape(user.last_name)}"
 
     if user.username:
         text += f"\n<b>Username:</b> @{html.escape(user.username)}"
@@ -254,7 +252,7 @@ def info(update: Update, context: CallbackContext):
     text += f"\n<b>Link:</b> {mention_html(user.id, 'link')}"
 
     if chat.type != "private" and user_id != bot.id:
-        _stext = "\n <b>Presence:</b> <code>{}</code>"
+        _stext = "\n<b>Presence:</b> <code>{}</code>"
 
         afk_st = is_afk(user.id)
         if afk_st:
@@ -270,7 +268,7 @@ def info(update: Update, context: CallbackContext):
                     text += _stext.format("Admin")
     if user_id not in [bot.id, 777000, 1087968824]:
         userhp = hpmanager(user)
-        text += f"\n\n<b>User Health:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
+        text += f"\n\n<b>Health:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
 
     if user.id == OWNER_ID:
         text += "."
