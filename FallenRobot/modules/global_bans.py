@@ -479,7 +479,7 @@ def __stats__():
 
 def __user_info__(user_id):
     is_gbanned = sql.is_user_gbanned(user_id)
-    text = "Malicious: <b>{}</b>"
+    text = "Suspicious: <b>{}</b>"
     if user_id in [777000, 1087968824]:
         return ""
     if user_id == dispatcher.bot.id:
@@ -487,13 +487,13 @@ def __user_info__(user_id):
     if int(user_id) in DRAGONS + TIGERS + WOLVES:
         return ""
     if is_gbanned:
-        text = text.format("ʏᴇs")
+        text = text.format("Yes")
         user = sql.get_gbanned_user(user_id)
         if user.reason:
             text += f"\n<b>Reason:</b> <code>{html.escape(user.reason)}</code>"
         text += f"\n<b>Appeal Chat:</b> @{SUPPORT_CHAT}"
     else:
-        text = text.format("ɴᴏ")
+        text = text.format("No")
     return text
 
 
