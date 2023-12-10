@@ -188,14 +188,14 @@ def start(update: Update, context: CallbackContext):
             elif args[0][1:].isdigit() and "Rules" in IMPORTED:
                 IMPORTED["Rules"].send_rules(update, args[0], from_pm=True)
 
-    else:
-        update.effective_message.reply_photo(
-            START_IMG,
-            caption="Iam online  !\n<b>UPDATE​:</b> <code>{}</code>".format(
-                uptime
-            ),
-            parse_mode=ParseMode.HTML,
-        )
+               else:
+                 update.effective_message.reply_photo(
+                 START_IMG,
+                 caption="Iam online  !\n<b>UPDATE​:</b> <code>{}</code>".format(
+                    uptime
+                 ),
+                   parse_mode=ParseMode.HTML,
+                 )
 
 
 def error_handler(update, context):
