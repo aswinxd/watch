@@ -72,8 +72,9 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Heya! This is elsandra [☘️](https://edit.telegra.ph/auth/4E9h6Y6EY5M7JsXg8ODFTtMKbsHUG8fIMoXSk4ug9g) a simple group manager bot click **commands help** to see my full potential.
-Also join my support group to ask questions
+Hey there! My name is Elsandra - I'm here to help you manage your groups! Hit Help and commands to find out more about how to use me to my full potential.
+
+Join my news channel to get information on all the latest updates.
 """
 
 buttons = [
@@ -84,16 +85,16 @@ buttons = [
         ),
     ],
     [
-        InlineKeyboardButton(text="❓How to use / Commands Help", callback_data="help_back"),
+        InlineKeyboardButton(text="❓How to use? / Commands Help", callback_data="help_back"),
     ],
     [
         InlineKeyboardButton(text="❔X1 News", url=f"https://t.me/Xmusicbots"),
-        InlineKeyboardButton(text="👥Support", url=f"https://t.me/{SUPPORT_CHAT}"),
+        InlineKeyboardButton(text="👥 Support", url=f"https://t.me/{SUPPORT_CHAT}"),
     ],
 ]
 
 HELP_STRINGS = f"""
-This is elsandra help Module click the buttons to see the help
+This is Elsandra help Module click the buttons to see the help
 If you have any doubts head to support chat"""
 
 IMPORTED = {}
