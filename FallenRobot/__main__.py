@@ -187,9 +187,7 @@ def start(update: Update, context: CallbackContext):
 
             elif args[0][1:].isdigit() and "Rules" in IMPORTED:
                 IMPORTED["Rules"].send_rules(update, args[0], from_pm=True)
-               
-            
-       else:
+               else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_sticker(
                 "CAACAgUAAxkBAAJYsmLWRvm70cE-mmxSNCovEf4v1ueJAAIcCAACbMK4VuL4EmZEkq8WKQQ"
@@ -207,7 +205,8 @@ def start(update: Update, context: CallbackContext):
                 uptime
             ),
             parse_mode=ParseMode.HTML,
-)
+        )
+        
 def error_handler(update, context):
     """Log the error and send a telegram message to notify the developer."""
     # Log the error before we do anything else, so we can see it even if something breaks.
