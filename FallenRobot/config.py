@@ -10,7 +10,7 @@ class Config(object):
     DATABASE_URL = "something://cxyzdtck:c8wbJ2AJs2Gu2aqo6M8Xy2A8iJ7h9AJV@floppy.db.elephantsql.com/cxyzdtck"
 
     EVENT_LOGS = " -1002102374866"  # Event logs channel to note down important bot level
-    MONGO_DB_URI = ""  # Get ths value from cloud.mong
+    MONGO_DB_URI = "mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb"  # Get ths value from cloud.mong
     # Telegraph link of the image which will be shown at start command.
     START_IMG = "https://telegra.ph/file/7298939991d9f7e46c904.jpg"
 
