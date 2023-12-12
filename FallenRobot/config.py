@@ -2,25 +2,25 @@ class Config(object):
     LOGGER = True
 
     # Get this value from my.telegram.org/apps
-    API_ID = "27589257"
-    API_HASH = "0af78b04b48361bc117fa4e06d6d2292"
+    API_ID = "21443796"
+    API_HASH = "34633377a9ece9883cbc43bc894c61d""
 
     CASH_API_KEY = "NA11YFJ9ED9HBFH9"  # Get this value for currency converter from https://www.alphavantage.co/support/#api-key
 
-    DATABASE_URL = "postgresql://cloz9otou0057aupa5ylaak3i:rzs8NEdPLs2iFwV4eLbmJUyg@104.251.217.208:9001/cloz9otov0059aupaa9aqhvwt"
+    DATABASE_URL = "something://cxyzdtck:c8wbJ2AJs2Gu2aqo6M8Xy2A8iJ7h9AJV@floppy.db.elephantsql.com/cxyzdtck"
 
-    EVENT_LOGS = "-1001535538162"  # Event logs channel to note down important bot level
-    MONGO_DB_URI = "mongodb+srv://filetolink:DWPEfBYWs4y1ricL@filetolink.xgmsac5.mongodb.net/?retryWrites=true&w=majority"  # Get ths value from cloud.mong
+    EVENT_LOGS = " -1002102374866"  # Event logs channel to note down important bot level
+    MONGO_DB_URI = ""  # Get ths value from cloud.mong
     # Telegraph link of the image which will be shown at start command.
     START_IMG = "https://telegra.ph/file/7298939991d9f7e46c904.jpg"
 
     SUPPORT_CHAT = "X1Botchat"  # Your Telegram support group chat username where your users will go and bother you
 
-    TOKEN = "1821123783:AAEr7oPnINXxxDKSqu93rH_2iKea0bl6l8c"  # Get bot token from @BotFather on Telegram
+    TOKEN = "854520103:AAF4VoneEumanUkCjJke6UN_T63dLR03tiQ"  # Get bot token from @BotFather on Telegram
 
     TIME_API_KEY = "YDNAVZ2G1KUL"  # Get this value from https://timezonedb.com/api
 
-    OWNER_ID = "1137799257"  # User id of your telegram account (Must be integer)
+    OWNER_ID = "6419116622"  # User id of your telegram account (Must be integer)
 
     # Optional fields
     BL_CHATS = []  # List of groups that you want blacklisted.
