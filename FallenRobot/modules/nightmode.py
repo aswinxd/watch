@@ -155,14 +155,7 @@ __help__ = """
  /nightmode*:* Adds Group to NightMode Chats
  /rmnight*:* Removes Group From NightMode Chats
 
-*Note:* Night Mode chats get Automatically closed at 12 am(IST) and Automatically openned at 6 am(IST) to Prevent Night Spams.
-
-*Callback Buttons:*
-1. /button1 - Description for button 1
-2. /button2 - Description for button 2
-3. /button3 - Description for button 3
-4. /button4 - Description for button 4
-5. /button5 - Description for button 5
+*Note:* Night Mode chats get Automatically closed at 12 am(IST) and Automatically openned at 6 am(IST) to Prevent Night Spam.
 """
 
 __mod_name__ = "Night mode"
