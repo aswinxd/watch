@@ -1,5 +1,3 @@
-from telethon.tl.custom import Button
-
 __help__ = """
 *Admins Only*
 
@@ -10,13 +8,12 @@ __help__ = """
 
 *Additional Options:*
  - `/nightmodehelp`: Show additional commands for Night Mode settings
-"""
 
-# Add URL buttons under the message
-__help__ += "\n*Additional Options:*"
-__help__ += f"\n - {Button.url('Enable Night Mode', url='http://yourwebsite.com/enablenightmode')}"
-__help__ += f"\n - {Button.url('Disable Night Mode', url='http://yourwebsite.com/disablenightmode')}"
-__help__ += f"\n - {Button.url('Visit our Website', url='http://yourwebsite.com')}"
-__help__ += f"\n - {Button.url('GitHub Repository', url='https://github.com/your_username/your_repo')}"
+*Additional URL Options:*
+ - Enable Night Mode: <a href='http://yourwebsite.com/enablenightmode'>Enable Night Mode</a>
+ - Disable Night Mode: <a href='http://yourwebsite.com/disablenightmode'>Disable Night Mode</a>
+ - Visit our Website: <a href='http://yourwebsite.com'>Visit our Website</a>
+ - GitHub Repository: <a href='https://github.com/your_username/your_repo'>GitHub Repository</a>
+"""
 
 __mod_name__ = "Night mode"
