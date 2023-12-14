@@ -1,4 +1,4 @@
-from telethon.tl.custom import Button.callback
+from telethon.tl.custom import Button
 
 __help__ = """
 *Admins Only*
