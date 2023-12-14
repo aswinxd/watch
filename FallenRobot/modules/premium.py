@@ -12,10 +12,11 @@ __help__ = """
  - `/nightmodehelp`: Show additional commands for Night Mode settings
 """
 
-# Add callback buttons directly in __help__
+# Add URL buttons under the message
 __help__ += "\n*Additional Options:*"
-__help__ += "\n - `/nightmodehelp`: Show additional commands for Night Mode settings"
 __help__ += f"\n - {Button.inline('Enable Night Mode', data='enable_night_mode')}"
 __help__ += f"\n - {Button.inline('Disable Night Mode', data='disable_night_mode')}"
+__help__ += f"\n - {Button.url('Visit our Website', url='http://yourwebsite.com')}"
+__help__ += f"\n - {Button.url('GitHub Repository', url='https://github.com/your_username/your_repo')}"
 
 __mod_name__ = "Night mode"
