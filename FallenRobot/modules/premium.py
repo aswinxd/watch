@@ -13,10 +13,14 @@ __help__ = """
 """
 
 # Add URL buttons under the message
+url_buttons = [
+    Button.inline('Enable Night Mode', data='enable_night_mode'),
+    Button.inline('Disable Night Mode', data='disable_night_mode'),
+    Button.url('Visit our Website', url='http://yourwebsite.com'),
+    Button.url('GitHub Repository', url='https://github.com/your_username/your_repo')
+]
+
 __help__ += "\n*Additional Options:*"
-__help__ += f"\n - {Button.inline('Enable Night Mode', data='enable_night_mode')}"
-__help__ += f"\n - {Button.inline('Disable Night Mode', data='disable_night_mode')}"
-__help__ += f"\n - {Button.url('Visit our Website', url='http://yourwebsite.com')}"
-__help__ += f"\n - {Button.url('GitHub Repository', url='https://github.com/your_username/your_repo')}"
+__help__ += "\n - " + "\n - ".join(str(button) for button in url_buttons)
 
 __mod_name__ = "Night mode"
