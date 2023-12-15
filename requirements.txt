@@ -92,3 +92,4 @@ PyYAML
 humanize
 pytube
 moviepy
+SibylSystem
