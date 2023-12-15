@@ -1,5 +1,4 @@
-from telethon import events
-from telethon.tl.custom import Button
+from telethon import events, Button
 
 # Assume you have an appropriate `client` object
 
@@ -20,10 +19,10 @@ async def start(event):
         "- Visit our Website"
         "- GitHub Repository",
         buttons=[
-            [Button.inline("Enable Night Mode", data="enable_night_mode")],
-            [Button.inline("Disable Night Mode", data="disable_night_mode")],
-            [Button.inline("Visit our Website", data="visit_website")],
-            [Button.inline("GitHub Repository", data="github_repo")],
+            [Button.inline("Enable Night Mode", b"enable_night_mode")],
+            [Button.inline("Disable Night Mode", b"disable_night_mode")],
+            [Button.inline("Visit our Website", b"visit_website")],
+            [Button.inline("GitHub Repository", b"github_repo")],
         ]
     )
 
@@ -32,3 +31,6 @@ async def enable_night_mode_callback(event):
     await event.respond("Enabling Night Mode...")
 
 # Similar handlers for other callback queries
+
+# Start the event loop
+client.run_until_disconnected
