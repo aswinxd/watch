@@ -101,5 +101,6 @@ __mod_name__ = "Mention"
 __help__ = """
 *Only for admins*
 
-❍ /tagall or @all '(reply to message or add another message) To mention all members in your group, without exception.'
+/tagall or @all '(reply to message or add another message) To mention all members in your group, without exception.'
+and use /cancel to stop
 """
