@@ -22,7 +22,71 @@ def get_rules(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
     send_rules(update, chat_id)
 
+from typing import Optional
 
+import FallenRobot.modules.sql.rules_sql as sql
+import FallenRobot.modules.sql.feds_sql as fsql
+from FallenRobot import dispatcher
+from FallenRobot.modules.helper_funcs.chat_status import user_admin
+from FallenRobot.modules.helper_funcs.string_handling import markdown_parser
+from telegram import (
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    Message,
+    ParseMode,
+    Update,
+    User,
+)
+from telegram.error import BadRequest
+from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
+from telegram.utils.helpers import escape_markdown
+
+# ... (other imports)
+
+def get_rules(update: Update, context: CallbackContext):
+    chat_id = update.effective_chat.id
+    user_id = update.effective_user.id
+    send_rules(update, chat_id, user_id, from_pm=True)
+
+def send_rules(update, chat_id, user_id, from_pm=False):
+    bot = dispatcher.bot
+    try:
+        chat = bot.get_chat(chat_id)
+    except BadRequest as excp:
+        # Handle the exception as needed
+        return
+
+    rules = sql.get_rules(chat_id)
+    text = f"The rules for *{escape_markdown(chat.title)}* are:\n\n{rules}"
+
+    try:
+        bot.send_message(
+            user_id, text, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
+        )
+    except BadRequest as excp:
+        # Handle the exception as needed
+        return
+
+# ... (rest of your code)
+
+@user_admin
+def set_rules(update: Update, context: CallbackContext):
+    chat_id = update.effective_chat.id
+    msg = update.effective_message  # type: Optional[Message]
+    raw_text = msg.text
+    args = raw_text.split(None, 1)  # use python's maxsplit to separate cmd and args
+    if len(args) == 2:
+        txt = args[1]
+        offset = len(txt) - len(raw_text)  # set correct offset relative to command
+        markdown_rules = markdown_parser(
+            txt, entities=msg.parse_entities(), offset=offset
+        )
+
+        sql.set_rules(chat_id, markdown_rules)
+        send_rules(update, chat_id, update.effective_user.id)
+        update.effective_message.reply_text("Successfully set rules for this group.")
+
+# ... (rest of your code)
 # Do not async - not from a handler
 def send_rules(update, chat_id, from_pm=False):
     bot = dispatcher.bot
