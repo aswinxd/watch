@@ -156,6 +156,8 @@ __help__ = """
  /rmnight*:* Removes Group From NightMode Chats
 
 *Note:* Night Mode chats get Automatically closed at 12 am(IST) and Automatically openned at 6 am(IST) to Prevent Night Spam.
+
+[animea](https://t.me/AnimeKaizoku)
 """
 
 __mod_name__ = "N mode"
