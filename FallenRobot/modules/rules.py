@@ -1,29 +1,10 @@
 from typing import Optional
 
-import FallenRobot.modules.sql.rules_sql as sql
-import FallenRobot.modules.sql.feds_sql as fsql
-from FallenRobot import dispatcher
-from FallenRobot.modules.helper_funcs.chat_status import user_admin
-from FallenRobot.modules.helper_funcs.string_handling import markdown_parser
-from telegram import (
-    InlineKeyboardButton,
-    InlineKeyboardMarkup,
-    Message,
-    ParseMode,
-    Update,
-    User,
-)
-from telegram.error import BadRequest
-from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
-from telegram.utils.helpers import escape_markdown
-from typing import Optional
-
-import FallenRobot.modules.sql.rules_sql as sql
-import FallenRobot.modules.sql.feds_sql as fsql
-from FallenRobot import dispatcher
-
-from FallenRobot.modules.helper_funcs.chat_status import user_admin
-from FallenRobot.modules.helper_funcs.string_handling import markdown_parser
+import AstrakoBot.modules.sql.rules_sql as sql
+import AstrakoBot.modules.sql.feds_sql as fsql
+from AstrakoBot import dispatcher
+from AstrakoBot.modules.helper_funcs.chat_status import user_admin
+from AstrakoBot.modules.helper_funcs.string_handling import markdown_parser
 from telegram import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
@@ -41,64 +22,7 @@ def get_rules(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
     send_rules(update, chat_id)
 
-from typing import Optional
 
-import FallenRobot.modules.sql.rules_sql as sql
-import FallenRobot.modules.sql.feds_sql as fsql
-from FallenRobot import dispatcher
-from FallenRobot.modules.helper_funcs.chat_status import user_admin
-from FallenRobot.modules.helper_funcs.string_handling import markdown_parser
-from telegram import (
-    InlineKeyboardButton,
-    InlineKeyboardMarkup,
-    Message,
-    ParseMode,
-    Update,
-    User,
-)
-from telegram.error import BadRequest
-from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
-from telegram.utils.helpers import escape_markdown
-
-# ... (other imports)
-@user_admin
-def set_rules(update: Update, context: CallbackContext):
-    chat_id = update.effective_chat.id
-    msg = update.effective_message  # type: Optional[Message]
-    raw_text = msg.text
-    args = raw_text.split(None, 1)  # use python's maxsplit to separate cmd and args
-    if len(args) == 2:
-        txt = args[1]
-        offset = len(txt) - len(raw_text)  # set correct offset relative to command
-        markdown_rules = markdown_parser(
-            txt, entities=msg.parse_entities(), offset=offset
-        )
-
-        sql.set_rules(chat_id, markdown_rules)
-        send_rules(update, chat_id, update.effective_user.id)
-        update.effective_message.reply_text("Successfully set rules for this group.")
-
-# ... (rest of your code)
-# ... (rest of your code)
-
-@user_admin
-def set_rules(update: Update, context: CallbackContext):
-    chat_id = update.effective_chat.id
-    msg = update.effective_message  # type: Optional[Message]
-    raw_text = msg.text
-    args = raw_text.split(None, 1)  # use python's maxsplit to separate cmd and args
-    if len(args) == 2:
-        txt = args[1]
-        offset = len(txt) - len(raw_text)  # set correct offset relative to command
-        markdown_rules = markdown_parser(
-            txt, entities=msg.parse_entities(), offset=offset
-        )
-
-        sql.set_rules(chat_id, markdown_rules)
-        send_rules(update, chat_id, update.effective_user.id)
-        update.effective_message.reply_text("Successfully set rules for this group.")
-
-# ... (rest of your code)
 # Do not async - not from a handler
 def send_rules(update, chat_id, from_pm=False):
     bot = dispatcher.bot
