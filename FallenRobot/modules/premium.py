@@ -29,13 +29,11 @@ def count_messages(update: Update, context: CallbackContext) -> None:
 def main() -> None:
     updater = Updater(TOKEN)  # Use the imported BOT_TOKEN
 
-    dp = updater.dispatcher
-
     # Change the command from /stats to /messages
-    dp.add_handler(CommandHandler("messages", messages))
+    dispatcher.add_handler(CommandHandler("messages", messages))
     
     # Keep the MessageHandler registration unchanged
-    dp.add_handler(MessageHandler(Filters.text & ~Filters.command, count_messages, run_async=True))
+    dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, count_messages, run_async=True))
 
     updater.start_polling()
 
