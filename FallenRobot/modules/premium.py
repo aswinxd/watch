@@ -1,7 +1,8 @@
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 from FallenRobot import (
-    TOKEN,  # Import the BOT_TOKEN from config.py
+    TOKEN,
+)
 
 # Dictionary to store the message count for each chat
 message_counts = {}
