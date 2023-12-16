@@ -25,14 +25,14 @@ def count_messages(update: Update, context: CallbackContext) -> None:
 # Main function
 def main() -> None:
     # Replace 'YOUR_BOT_TOKEN' with your actual bot token
-    token = '1778217785:AAE4AyHlT_dfs_JAteRlDwCX59duSVwb0CQ'
+    token = '1711796263:AAGqLyPusqxENy0VHceY2vOVCbWWxdP8-SQ'
     
     updater = Updater(token)
 
     dp = updater.dispatcher
 
     dp.add_handler(CommandHandler("stats", stats))
-    dp.add_handler(MessageHandler(Filters.text & ~Filters.command, count_messages))
+    dp.add_handler(MessageHandler(Filters.text & ~Filters.command, count_messages, run_async=True))
 
     updater.start_polling()
 
