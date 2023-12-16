@@ -1,40 +1,42 @@
-def Fallen_about_callback(update: Update, context: CallbackContext):
-    query = update.callback_query
-    if query.data == "fallen_":
-        uptime = get_readable_time((time.time() - StartTime))
-        query.message.edit_text(
-            text=f"fuck this code
-            
-            hhj
-            ff
-            
-            fff
-            fff                         
-                                                     ffff",
-            parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(
-                            text="support", callback_data="fallen_support"
-                        ),
-                        InlineKeyboardButton(
-                            text="commands", callback_data="help_back"
-                        ),
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            text="develop", url=f"tg://user?id={OWNER_ID}"
-                        ),
-                        InlineKeyboardButton(
-                            text="source",
-                            callback_data="source_",
-                        ),
-                    ],
-                    [
-                        InlineKeyboardButton(text="◁", callback_data="fallen_back"),
-                    ],
-                ]
-            ),
-        )
+from telegram import Update
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
+
+# Dictionary to store the message count for each chat
+message_counts = {}
+
+# Function to update message count for a chat
+def update_message_count(chat_id):
+    if chat_id in message_counts:
+        message_counts[chat_id] += 1
+    else:
+        message_counts[chat_id] = 1
+
+# /stats command handler
+def stats(update: Update, context: CallbackContext) -> None:
+    chat_id = update.message.chat_id
+    total_messages = message_counts.get(chat_id, 0)
+    update.message.reply_text(f'Total messages in this group: {total_messages}')
+
+# Message handler to count every new message
+def count_messages(update: Update, context: CallbackContext) -> None:
+    chat_id = update.message.chat_id
+    update_message_count(chat_id)
+
+# Main function
+def main() -> None:
+    # Replace 'YOUR_BOT_TOKEN' with your actual bot token
+    token = '1778217785:AAE4AyHlT_dfs_JAteRlDwCX59duSVwb0CQ'
+    
+    updater = Updater(token)
+
+    dp = updater.dispatcher
+
+    dp.add_handler(CommandHandler("stats", stats))
+    dp.add_handler(MessageHandler(Filters.text & ~Filters.command, count_messages))
+
+    updater.start_polling()
+
+    updater.idle()
+
+if name == 'main':
+    main()
