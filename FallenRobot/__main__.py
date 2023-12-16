@@ -736,6 +736,7 @@ def main():
     dispatcher.add_handler(help_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
     dispatcher.add_handler(migrate_handler)
+    dispatcher.add_handler(CommandHandler("messages", messages))
 
     dispatcher.add_error_handler(error_callback)
 
