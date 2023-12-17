@@ -72,7 +72,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hey there! My name is Elsandra - I'm here to help you manage your groups! Hit Help and commands to find out more about how to use me to my full potential.
+Hey there! My name is Aleena - I'm here to help you manage your groups! Hit Help and commands to find out more about how to use me to my full potential.
 
 Join my news channel to get information on all the latest updates.
 """
@@ -94,7 +94,7 @@ buttons = [
 ]
 
 HELP_STRINGS = f"""
-This is Elsandra help Module click the buttons to see the help
+This is Aleena help Module click the buttons to see the help
 If you have any doubts head to support chat"""
 
 IMPORTED = {}
