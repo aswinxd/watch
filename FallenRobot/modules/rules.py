@@ -73,7 +73,7 @@ def send_rules(update, chat_id, from_pm=False):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Rules", url=f"t.me/{bot.username}?start={chat_id}"
+                            text="❔Read rules", url=f"t.me/{bot.username}?start={chat_id}"
                         )
                     ]
                 ]
@@ -86,7 +86,7 @@ def send_rules(update, chat_id, from_pm=False):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Rules", url=f"t.me/{bot.username}?start={chat_id}"
+                            text="❔Read rules", url=f"t.me/{bot.username}?start={chat_id}"
                         )
                     ]
                 ]
@@ -99,7 +99,7 @@ def send_rules(update, chat_id, from_pm=False):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Fed Rules", url=f"t.me/{bot.username}?start={chat_id}"
+                            text="❔ Fed Rules", url=f"t.me/{bot.username}?start={chat_id}"
                         )
                     ]
                 ]
