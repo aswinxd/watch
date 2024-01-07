@@ -10,9 +10,9 @@ from pyrogram.errors.exceptions.bad_request_400 import (
 )
 from pyrogram.types import ChatPermissions, InlineKeyboardButton, InlineKeyboardMarkup
 
-from DewmiBot import DRAGONS as SUDO_USERS
-from DewmiBot import pbot
-from DewmiBot.modules.sql import forceSubscribe_sql as sql
+from FallenRobot import DRAGONS as SUDO_USERS
+from FallenRobot import pbot
+from FallenRobot.modules.sql import forceSubscribe_sql as sql
 
 logging.basicConfig(level=logging.INFO)
 
@@ -177,9 +177,9 @@ def config(client, message):
 
 __help__ = """
 
-*ForceSubscribe:*
-❍ RoseBot can mute members who are not subscribed your channel until they subscribe.
-❍ When enabled I will mute unsubscribed members and show them a unmute button. When they pressed the button I will unmute them.
+*ForceSubscribe:
+bot can mute members who are not subscribed your channel until they subscribe.
+ When enabled I will mute unsubscribed members and show them a unmute button. When they pressed the button I will unmute them.
 
 *Setup*
 
@@ -187,13 +187,12 @@ __help__ = """
 Note: Only creator of the group can setup me and i will not allow force subscribe again if not done so.
  
 *Commmands*
-❍ /ForceSubscribe - To get the current settings.
-❍ /ForceSubscribe no/off/disable - To turn of ForceSubscribe.
-❍ /ForceSubscribe {channel username} - To turn on and setup the channel.
-❍ /ForceSubscribe clear - To unmute all members who muted by me.
+ /ForceSubscribe - To get the current settings.
+ /ForceSubscribe no/off/disable - To turn of ForceSubscribe.
+ /ForceSubscribe {channel username} - To turn on and setup the channel.
+/ForceSubscribe clear - To unmute all members who muted by me.
 
 ⚠️ Note:  /FSub is an alias of /ForceSubscribe
 
- ©️@TheElinaBot🇱🇰
 """
-__mod_name__ = "Force-Sub📢"
+__mod_name__ = "subscribe"
