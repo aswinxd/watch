@@ -9,7 +9,7 @@ from fontTools.ttLib import TTFont
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 from telethon.tl import functions, types
 
-from DewmiBot.events import register
+from FallenRobot.events import register
 
 COLORS = [
     "#F07975",
