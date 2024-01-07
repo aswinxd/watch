@@ -37,7 +37,7 @@ def _onUnMuteRequest(client, cb):
                 except UserNotParticipant:
                     client.answer_callback_query(
                         cb.id,
-                        text=f"❗ Join our @{channel} channel and press '𝚄𝙽𝙼𝚄𝚃𝙴 𝙼𝙴' button.",
+                        text=f"❗ Join our @{channel} channel and press Unmute me button.",
                         show_alert=True,
                     )
             else:
@@ -53,7 +53,7 @@ def _onUnMuteRequest(client, cb):
             ):
                 client.send_message(
                     chat_id,
-                    f"❗ **{cb.from_user.mention} is trying to UnMute himself but I can't unmute him because I am not an admin in this chat. Add me as an admin again.**\n__#Leaving this chat...__",
+                    f"❗ {cb.from_user.mention} is trying to UnMute himself but I can't unmute him because I am not an admin in this chat. Add me as an admin again. \n__#Leaving this chat...__",
                 )
             else:
                 client.answer_callback_query(
@@ -79,7 +79,7 @@ def _check_member(client, message):
             except UserNotParticipant:
                 try:
                     sent_message = message.reply_text(
-                        "Welcome {} 🙏 \n **You haven't joined our @{} Channel yet** 😭 \n \nPlease Join [Our Channel](https://t.me/{}) and hit the **UNMUTE ME** Button. \n \n ".format(
+                        "Welcome {} \n You haven't joined our @{} Channel yet \n \nPlease Join [Our Channel](https://t.me/{}) and hit the Unmute me Button. \n \n ".format(
                             message.from_user.mention, channel, channel
                         ),
                         disable_web_page_preview=True,
@@ -104,12 +104,12 @@ def _check_member(client, message):
                     )
                 except ChatAdminRequired:
                     sent_message.edit(
-                        "❗ **ElinaBot is not an admin here.**\n__Give me ban permissions and retry.. \n#Ending FSub...__"
+                        "❗iam not an admin here.\n__Give me ban permissions and retry.. \n#Ending FSub...__"
                     )
             except ChatAdminRequired:
                 client.send_message(
                     chat_id,
-                    text=f"❗ **I'm not an admin of @{channel} channel.**\n__Give me admin of that channel and retry.\n#Ending FSub...__",
+                    text=f"❗I'm not an admin of @{channel} channel.\n__Give me admin of that channel and retry.\n#Ending FSub...__",
                 )
 
 @pbot.on_message(filters.command(["forcesubscribe", "fsub"]) & ~filters.private)
@@ -134,7 +134,7 @@ def config(client, message):
                         if chat_member.restricted_by.id == (client.get_me()).id:
                             client.unban_chat_member(chat_id, chat_member.user.id)
                             time.sleep(1)
-                    sent_message.edit("✅ **Unmuted all members who are muted by me.**")
+                    sent_message.edit("✅ Unmuted all members who are muted by me.")
                 except ChatAdminRequired:
                     sent_message.edit(
                         "❗ **I am not an admin in this chat.**\n__I can't unmute members because I am not an admin in this chat. Make me an admin with ban user permission.__"
@@ -144,29 +144,29 @@ def config(client, message):
                     client.get_chat_member(input_str, "me")
                     sql.add_channel(chat_id, input_str)
                     message.reply_text(
-                        f"✅ **Force Subscribe is Enabled**\n__Force Subscribe is enabled, all the group members have to subscribe to this [channel](https://t.me/{input_str}) in order to send messages in this group.__",
+                        f"✅ Force Subscribe is Enabled\n__Force Subscribe is enabled, all the group members have to subscribe to this [channel](https://t.me/{input_str}) in order to send messages in this group.__",
                         disable_web_page_preview=True,
                     )
                 except UserNotParticipant:
                     message.reply_text(
-                        f"❗ **Not an Admin in the Channel**\n__I am not an admin in the [channel](https://t.me/{input_str}). Add me as an admin to enable ForceSubscribe.__",
+                        f"❗Not an Admin in the Channel\n__I am not an admin in the [channel](https://t.me/{input_str}). Add me as an admin to enable ForceSubscribe.__",
                         disable_web_page_preview=True,
                     )
                 except (UsernameNotOccupied, PeerIdInvalid):
-                    message.reply_text(f"❗ **Invalid Channel Username.**")
+                    message.reply_text(f"❗Invalid Channel Username.")
                 except Exception as err:
-                    message.reply_text(f"❗ **ERROR:** ```{err}```")
+                    message.reply_text(f"❗ERROR: ```{err}```")
         else:
             if sql.fs_settings(chat_id):
                 message.reply_text(
-                    f"✅ **Force Subscribe is enabled in this chat.**\n__For this [Channel](https://t.me/{sql.fs_settings(chat_id).channel})__",
+                    f"✅Force Subscribe is enabled in this chat.\n__For this [Channel](https://t.me/{sql.fs_settings(chat_id).channel})__",
                     disable_web_page_preview=True,
                 )
             else:
-                message.reply_text("❌ **Force Subscribe is disabled in this chat.**")
+                message.reply_text("Force Subscribe is disabled in this chat.")
     else:
         message.reply_text(
-            "❗ **Group Creator Required**\n__You have to be the group creator to do that.__"
+            "❗ Group Creator Required\n__You have to be the group creator to do that.__"
         )
 
 __help__ = """
