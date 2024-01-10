@@ -7,8 +7,8 @@ class Config(object):
     
     CASH_API_KEY = "NA11YFJ9ED9HBFH9"# Get this value for currencyconverter from https://www.alphavantage.co/support/#api-key
     
-    DATABASE_URL = "postgres://xjcwgicq:trSiBzO7gtqBgIlUSNsaKvK-Dz5d_Jvs@rajje.db.elephantsql.com/xjcwgicq"
-    EVENT_LOGS = "-1001696809539"  # Event logs channel to note dowimportant bot level
+    DATABASE_URL = "postgresql://cloz9otou0057aupa5ylaak3i:rzs8NEdPLs2iFwV4eLbmJUyg@104.251.217.208:9001/cloz9otov0059aupaa9aqhvwt"
+    EVENT_LOGS = "-1002049466903"  # Event logs channel to note dowimportant bot level
     MONGO_DB_URI = "mongodb+srv://bot:bot@cluster0.8vepzds.mongodb.net/?retryWrites=true&w=majority"  # Get ths value from cloud.mong
     
     # Telegraph link of the image which will be shown at start commans
