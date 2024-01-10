@@ -77,6 +77,33 @@ def markdown_help(update: Update, context: CallbackContext):
     markdown_help_sender(update)
 
 
+__help__ = """
+*Available Commands and Explanation*
+
+>> /Pconnect - To connect a channel / group for further settings.
+>> /chats - Lists the available connected chats.
+>> /send - To send messages to connected chats together.
+
+Auto-Accept Settings
+1. First you have to connect the desired channel / group using /connect.
+2. Once chat is connected with your PM, use /chats to view the connected chats.
+3. Click on any chat to set-up auto-accept and auto-delete.
+4. You can set a delay for accepting the requests, which means users will be accepted only after the set delay.
+5. You can also set-up a welcome message, which will be sent to the user, once he send request to join the channel / group.
+
+Auto-Delete Settings
+1. Connect the chat same as above
+2. Use /chats to enter into Auto-Delete settings for specific chats.
+3. You can turn on / off auto delete using the status button.
+4. You can set delay for deleting the message 
+5. You can also set type of messages to be deleted [text, media or all]
+*
+Markdown:*
+  /markdownhelp*:* quick summary of how markdown works in telegram - can only be called in private chats
+
+*Other commands on Premium will be relesed on our next update*
+"""
+
 ECHO_HANDLER = DisableAbleCommandHandler(
     "echo", echo, filters=Filters.chat_type.groups, run_async=True
 )
@@ -85,6 +112,7 @@ MD_HELP_HANDLER = CommandHandler("markdownhelp", markdown_help, run_async=True)
 dispatcher.add_handler(ECHO_HANDLER)
 dispatcher.add_handler(MD_HELP_HANDLER)
 
+__mod_name__ = "Premium"
 __command_list__ = ["id", "echo"]
 __handlers__ = [
     ECHO_HANDLER,
