@@ -571,7 +571,7 @@ def main():
                 chat_id=f"@{SUPPORT_CHAT}",
                 photo=START_IMG,
                 caption=f"""
-📢Bot Restarted!
+aleena is online :)
        
     """,
                 parse_mode=ParseMode.MARKDOWN,
@@ -599,8 +599,6 @@ def main():
 
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(help_handler)
-    dispatcher.add_handler(about_callback_handler)
-    dispatcher.add_handler(source_callback_handler)
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
@@ -608,7 +606,7 @@ def main():
 
     dispatcher.add_error_handler(error_callback)
 
-    LOGGER.info("Using long polling..")
+    LOGGER.info("Aleena Using long polling..")
     updater.start_polling(timeout=15, read_latency=4, drop_pending_updates=True)
 
     if len(argv) not in (1, 3, 4):
