@@ -80,12 +80,12 @@ def markdown_help(update: Update, context: CallbackContext):
 __help__ = """
 *Available Commands and Explanation*
 
->> /Pconnect - To connect a channel / group for further settings.
->> /chats - Lists the available connected chats.
->> /send - To send messages to connected chats together.
+ /Pconnect - To connect a channel / group for further settings.
+ /chats - Lists the available connected chats.
+ /send - To send messages to pconnected chats together.
 
 Auto-Accept Settings
-1. First you have to connect the desired channel / group using /connect.
+1. First you have to connect the desired channel / group using /pconnect.
 2. Once chat is connected with your PM, use /chats to view the connected chats.
 3. Click on any chat to set-up auto-accept and auto-delete.
 4. You can set a delay for accepting the requests, which means users will be accepted only after the set delay.
@@ -97,11 +97,9 @@ Auto-Delete Settings
 3. You can turn on / off auto delete using the status button.
 4. You can set delay for deleting the message 
 5. You can also set type of messages to be deleted [text, media or all]
-*
-Markdown:*
-  /markdownhelp*:* quick summary of how markdown works in telegram - can only be called in private chats
 
-*Other commands on Premium will be relesed on our next update*
+Markdown:
+  /markdownhelp*:* quick summary of how markdown works in telegram - can only be called in private chats
 """
 
 ECHO_HANDLER = DisableAbleCommandHandler(
