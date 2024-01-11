@@ -289,7 +289,7 @@ def help_button(update, context):
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="🔙", callback_data="help_back")]]
+                    [[InlineKeyboardButton(text="🔙Back", callback_data="help_back")]]
                 ),
             )
 
@@ -326,9 +326,7 @@ def help_button(update, context):
 
     except BadRequest:
         pass
-
-
-
+        
 def get_help(update: Update, context: CallbackContext):
     chat = update.effective_chat  # type: Optional[Chat]
     args = update.effective_message.text.split(None, 1)
