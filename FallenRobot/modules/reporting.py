@@ -108,17 +108,17 @@ def report(update: Update, context: CallbackContext) -> str:
             keyboard = [
                 [
                     InlineKeyboardButton(
-                        "➡ Message",
+                        "Message",
                         url=f"https://t.me/{chat.username}/{message.reply_to_message.message_id}",
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "⚠ Kick",
+                        "Kick",
                         callback_data=f"report_{chat.id}=kick={reported_user.id}={reported_user.first_name}",
                     ),
                     InlineKeyboardButton(
-                        "⛔️ Ban",
+                        "Ban",
                         callback_data=f"report_{chat.id}=banned={reported_user.id}={reported_user.first_name}",
                     ),
                 ],
