@@ -80,9 +80,9 @@ def markdown_help(update: Update, context: CallbackContext):
 __help__ = """
 *Available Commands and Explanation*
 
- /Pconnect - To connect a channel / group for further settings.
- /chats - Lists the available connected chats.
- /send - To send messages to pconnected chats together.
+-/pconnect - To connect a channel / group for further settings.
+-/chats - Lists the available connected chats.
+-/send - To send messages to pconnected chats together.
 
 Auto-Accept Settings
 1. First you have to connect the desired channel / group using /pconnect.
@@ -99,7 +99,7 @@ Auto-Delete Settings
 5. You can also set type of messages to be deleted [text, media or all]
 
 Markdown:
-  /markdownhelp*:* quick summary of how markdown works in telegram - can only be called in private chats
+-/markdownhelp*:* quick summary of how markdown works in telegram - can only be called in private chats
 """
 
 ECHO_HANDLER = DisableAbleCommandHandler(
