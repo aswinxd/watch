@@ -88,13 +88,13 @@ buttons = [
         InlineKeyboardButton(text="❓How to use? / Commands Help", callback_data="help_back"),
     ],
     [
-        InlineKeyboardButton(text="❔X1 News", url=f"https://t.me/Xmusicbots"),
-        InlineKeyboardButton(text="👥 Support", url=f"https://t.me/{SUPPORT_CHAT}"),
+        InlineKeyboardButton(text="X1 News", url=f"https://t.me/XMusicBots"),
+        InlineKeyboardButton(text="❕Support", url=f"https://t.me/AleenaSupport"),
     ],
 ]
 
 HELP_STRINGS = f"""
-This is Aleena help Module click the buttons to see the help
+This is Aeena help Module click the buttons to see the help
 If you have any doubts head to support chat"""
 
 IMPORTED = {}
@@ -199,14 +199,12 @@ def start(update: Update, context: CallbackContext):
                 timeout=60,
             )
     else:
-        update.effective_message.reply_photo(
-            START_IMG,
-            caption="Iam online  !\n<b>UPDATE​:</b> <code>{}</code>".format(
+        update.effective_message.reply_text(
+          "Heya :) PM me if you have any questions on how to use me!".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
         )
-
 
 def error_handler(update, context):
     """Log the error and send a telegram message to notify the developer."""
@@ -289,7 +287,7 @@ def help_button(update, context):
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="🔙Back", callback_data="help_back")]]
+                    [[InlineKeyboardButton(text="🔙", callback_data="help_back")]]
                 ),
             )
 
@@ -326,7 +324,37 @@ def help_button(update, context):
 
     except BadRequest:
         pass
+
         
+def Fallen_about_callback(update: Update, context: CallbackContext):
+    query = update.callback_query
+    if query.data == "fallen_":
+        uptime = get_readable_time((time.time() - StartTime))
+        query.message.edit_text(
+            text=f"Thankyou @Xenonbots for helping us on this project",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(
+                            text="🔙Back", callback_data="fallen_back"
+                        ),
+                    ],
+                ]
+            ),
+        )
+    elif query.data == "fallen_back":
+        first_name = update.effective_user.first_name
+        query.message.edit_text(
+            PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME),
+            reply_markup=InlineKeyboardMarkup(buttons),
+            parse_mode=ParseMode.MARKDOWN,
+            timeout=60,
+            disable_web_page_preview=True,
+        )
+
+
 def get_help(update: Update, context: CallbackContext):
     chat = update.effective_chat  # type: Optional[Chat]
     args = update.effective_message.text.split(None, 1)
@@ -380,7 +408,7 @@ def get_help(update: Update, context: CallbackContext):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back🔙", callback_data="help_back")]]
+                [[InlineKeyboardButton(text="🔙", callback_data="help_back")]]
             ),
         )
 
@@ -563,24 +591,18 @@ def migrate_chats(update: Update, context: CallbackContext):
 
 
 def main():
+
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.send_photo(
-                chat_id=f"@{SUPPORT_CHAT}",
-                photo=START_IMG,
-                caption=f"""
-aleena is online :)
-       
-    """,
-                parse_mode=ParseMode.MARKDOWN,
-            )
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Iam online now")
         except Unauthorized:
             LOGGER.warning(
-                f"Bot isn't able to send message to @{SUPPORT_CHAT}, go and check!"
+                "Bot isnt able to send message to support_chat, go and check!",
             )
         except BadRequest as e:
             LOGGER.warning(e.message)
 
+    
     start_handler = CommandHandler("start", start, run_async=True)
 
     help_handler = CommandHandler("help", get_help, run_async=True)
@@ -592,11 +614,15 @@ aleena is online :)
     settings_callback_handler = CallbackQueryHandler(
         settings_button, pattern=r"stngs_", run_async=True
     )
+    about_callback_handler = CallbackQueryHandler(
+        Fallen_about_callback, pattern=r"fallen_", run_async=True
+    )
 
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
 
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(help_handler)
+    dispatcher.add_handler(about_callback_handler)
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
@@ -616,7 +642,7 @@ aleena is online :)
 
 
 if __name__ == "__main__":
-    LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
+    LOGGER.info("Aleena Successfully loaded modules: " + str(ALL_MODULES))
     telethn.start(bot_token=TOKEN)
     pbot.start()
     main()
