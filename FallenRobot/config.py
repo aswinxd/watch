@@ -7,8 +7,8 @@ class Config(object):
     
     CASH_API_KEY = "NA11YFJ9ED9HBFH9"# Get this value for currencyconverter from https://www.alphavantage.co/support/#api-key
     
-    DATABASE_URL = "postgresql://cloz9otou0057aupa5ylaak3i:rzs8NEdPLs2iFwV4eLbmJUyg@104.251.217.208:9001/cloz9otov0059aupaa9aqhvwt"
-    EVENT_LOGS = "-1002049466903"  # Event logs channel to note dowimportant bot level
+    DATABASE_URL = "postgresql://clrehbwbp000baume7xdzhi6p:y4BtYNzxVHmlq94jxOtfuaNA@104.251.218.202:9003/clrehbwbq000daume58bv0oxx"
+    EVENT_LOGS = "-1002121758017"  # Event logs channel to note dowimportant bot level
     MONGO_DB_URI = "mongodb+srv://bot:bot@cluster0.8vepzds.mongodb.net/?retryWrites=true&w=majority"  # Get ths value from cloud.mong
     
     # Telegraph link of the image which will be shown at start commans
@@ -17,7 +17,7 @@ class Config(object):
     
     TOKEN = "2119246346:AAGLiG8RRlbP3rifH__22R--VBBO_kDvbA4"  # Get bot token from @BotFather on Telegram
     TIME_API_KEY = "YDNAVZ2G1KUL"  # Get this value from https://timezonedb.com/api
-    OWNER_ID = "1137799257"  # User id of your telegram account (Mustbe integer)
+    OWNER_ID = "5499564416"  # User id of your telegram account (Mustbe integer)
     # Optional fields
     
     BL_CHATS = []  # List of groups that you want blacklisted.
