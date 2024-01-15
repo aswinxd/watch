@@ -33,7 +33,7 @@ class Config(object):
     INFOPIC = False
     LOAD = []
     NO_LOAD = []
-    STRICT_GBAN = True
+    STRICT_GBAN = False
     TEMP_DOWNLOAD_DIRECTORY = "./"
     WORKERS = 8
 class Production(Config):
