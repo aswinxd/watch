@@ -72,7 +72,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hey there! My name is Aleena - I'm here to help you manage your groups! Hit Help and commands to find out more about how to use me to my full potential.
+Hey there! My name is Watch dog - I'm here to help you manage your groups! Hit Help and commands to find out more about how to use me to my full potential.
 
 Join my news channel to get information on all the latest updates.
 """
@@ -88,13 +88,13 @@ buttons = [
         InlineKeyboardButton(text="❓How to use? / Commands Help", callback_data="help_back"),
     ],
     [
-        InlineKeyboardButton(text="X1 News", url=f"https://t.me/XMusicBots"),
-        InlineKeyboardButton(text="❕Support", url=f"https://t.me/AleenaSupport"),
+        InlineKeyboardButton(text="X1 News", url=f"https://t.me/watch_dogs_support"),
+        InlineKeyboardButton(text="❕Support", url=f"https://t.me/watch_dogs_support"),
     ],
 ]
 
 HELP_STRINGS = f"""
-This is Aeena help Module click the buttons to see the help
+This is Watch Dog help Module click the buttons to see the help
 If you have any doubts head to support chat"""
 
 IMPORTED = {}
