@@ -15,7 +15,7 @@ class Config(object):
     START_IMG = "https://te.legra.ph/file/c5fc1c8df4c776e14c061.mp4"
     SUPPORT_CHAT = "AleenaSupport"  # Your Telegram support group chatsername where your users will go and bother you
     
-    TOKEN = "2119246346:AAGLiG8RRlbP3rifH__22R--VBBO_kDvbA4"  # Get bot token from @BotFather on Telegram
+    TOKEN = "6420144202:AAF_vM9N9DTmoW5oII4RcxvfZYfD7swIxvU"  # Get bot token from @BotFather on Telegram
     TIME_API_KEY = "YDNAVZ2G1KUL"  # Get this value from https://timezonedb.com/api
     OWNER_ID = "5499564416"  # User id of your telegram account (Mustbe integer)
     # Optional fields
