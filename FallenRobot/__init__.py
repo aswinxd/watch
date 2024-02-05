@@ -86,7 +86,7 @@ if ENV:
         raise Exception("Your whitelisted users list does not contain valid integers.")
 
 else:
-    from FallenRobot.config import Development as Config
+    from config import Development as Config
 
     API_ID = Config.API_ID
     API_HASH = Config.API_HASH
